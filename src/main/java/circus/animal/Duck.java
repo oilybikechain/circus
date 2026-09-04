@@ -1,3 +1,5 @@
+package circus.animal;
+
 public class Duck extends Bird {
     @Override
     public String speak() {
@@ -15,6 +17,6 @@ public class Duck extends Bird {
 
     @Override
     public int getValue() {
-        return 20;
+        return 10;
     }
 }
