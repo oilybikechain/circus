@@ -16,8 +16,4 @@ public class Parrot extends Bird {
         return "I'm a parrot";
     }
 
-    @Override
-    public int getValue() {
-        return 20;
-    }
 }

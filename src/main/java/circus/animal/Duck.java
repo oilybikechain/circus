@@ -20,8 +20,4 @@ public class Duck extends Bird {
         System.out.println("I'm swimming...");
     }
 
-    @Override
-    public int getValue() {
-        return 10;
-    }
 }
