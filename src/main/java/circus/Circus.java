@@ -1,13 +1,12 @@
 package circus;
 
+import circus.animal.*;
 import circus.equipment.Equipment;
 import circus.equipment.Cannon;
 import circus.equipment.Ladder;
 
-import circus.animal.Tiger;
-import circus.animal.Animal;
-import circus.animal.Duck;
-import circus.animal.Parrot;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Circus {
     private static Animal[] animals = {
@@ -46,8 +45,46 @@ public class Circus {
     }
 
     public static void main(String[] args) {
-        makeAnimalsTalk();
-        System.out.println("Total value of animals " + calculateValue(animals));
-        System.out.println("Total value of equipments " + calculateValue(equipments));
+        System.out.println("Number og animals in the circus: " + animals.length);
+
+        printAllAnimals();
+
+        System.out.println("Number of animals in the circus: " + animals.length);
+
+        ArrayList<Animal> animalArrayList = new ArrayList<>(Arrays.asList(animals));
+
+        printAllAnimals(animalArrayList);
+
+        animalArrayList.add(new Elephant("StrongOne"));
+        printAllAnimals(animalArrayList);
+        System.out.println("Size of array list: " + animalArrayList.size());
+
+        Parrot andy = new Parrot("Andy");
+
+
+    //        makeAnimalsTalk();
+//        System.out.println("Total value of animals " + calculateValue(animals));
+//        System.out.println("Total value of equipments " + calculateValue(equipments));
+    }
+
+    private static void printAllAnimals(ArrayList<Animal> animals) {
+        for(Animal a : animals) {
+            System.out.println(a);
+        }
+    }
+
+    private static void printAllAnimals() {
+        for(Animal a : animals) {
+            System.out.println(a);
+        }
+    }
+
+    private static Animal findAnimalRefernce(ArrayList<Animal> animals, String nameOfAnimal) {
+        for(Animal a : animals) {
+            if (a.name == nameOfAnimal) {
+                return a;
+            }
+        }
+        return null;
     }
 }
