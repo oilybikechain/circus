@@ -81,7 +81,7 @@ public class Circus {
 
     private static Animal findAnimalRefernce(ArrayList<Animal> animals, String nameOfAnimal) {
         for(Animal a : animals) {
-            if (a.name == nameOfAnimal) {
+            if (a.name.equals(nameOfAnimal)) {
                 return a;
             }
         }
